@@ -19,7 +19,7 @@ $(function () {
             dataType: "json",
             async: false,
             success: function(data,textStatus,jqXHR) {
-                window.open("https://tsurugeek.github.io/redirect_test_page/login.html?a="+data);
+                window.open("https://tsurugeek.github.io/redirect_test_page/login.html?a="+data, '_blank');
             },
             error: function(){
                 alert('失敗');
