@@ -8,6 +8,25 @@
   font-size: 48px;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(function () {
+    $('#browser').click(function () {
+        // Ajax通信を開始する
+        $.ajax({
+            type: "GET",
+            url: 'renkei.html',
+            dataType: "json"
+            success: function(data,textStatus,jqXHR) {
+                window.open("https://tsurugeek.github.io/redirect_test_page/login.html?a="+data);
+            },
+            error: function(){
+                alert('失敗');
+            }
+        })
+    });
+});
+</script>
 </head>
 <body>
   <form>
@@ -16,7 +35,7 @@
     <a href="redirect-test://host/">ログイン1</a><br>
     <a href="https://tinyurl.com/63mwh7xs">ログイン2</a><br>
     <a href="redirect-test://host/aaa">ログイン3</a><br><br>
-    <a href="https://tsurugeek.com">リンク１</a>
+    <a id="browser" href="https://tsurugeek.com">外部ブラウザ</a>
   </form>
 </body>
 </html>
