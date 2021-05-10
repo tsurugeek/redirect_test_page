@@ -17,6 +17,7 @@ $(function () {
             type: "GET",
             url: 'https://tsurugeek.github.io/redirect_test_page/sample.json',
             dataType: "json",
+            async: false,
             success: function(data,textStatus,jqXHR) {
                 window.open("https://tsurugeek.github.io/redirect_test_page/login.html?a="+data);
             },
