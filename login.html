@@ -34,7 +34,7 @@ $(function () {
             dataType: "json",
             async: false,
             success: function(data,textStatus,jqXHR) {
-              $('#browser2').attr("href", "https://tsurugeek.github.io/redirect_test_page/login.html?a="+data);
+              $('#browser2').attr("href", "https://tsurugeek.github.io/redirect_test_page/login.html?a="+data["data"]);
             },
             error: function(){
                 alert('失敗');
