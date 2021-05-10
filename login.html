@@ -26,6 +26,21 @@ $(function () {
             }
         })
     });
+    $('#browser2').click(function () {
+        // Ajax通信を開始する
+        $.ajax({
+            type: "GET",
+            url: 'https://tsurugeek.github.io/redirect_test_page/sample.json',
+            dataType: "json",
+            async: false,
+            success: function(data,textStatus,jqXHR) {
+              $('#browser2').attr("href", "https://tsurugeek.github.io/redirect_test_page/login.html?a="+data);
+            },
+            error: function(){
+                alert('失敗');
+            }
+        })
+    });
 });
 </script>
 </head>
@@ -36,7 +51,8 @@ $(function () {
     <a href="redirect-test://host/">ログイン1</a><br>
     <a href="https://tinyurl.com/63mwh7xs">ログイン2</a><br>
     <a href="redirect-test://host/aaa">ログイン3</a><br><br>
-    <input type="button" id="browser" value="外部ブラウザ">
+    <input type="button" id="browser" value="外部ブラウザ"><br>
+    <a href="https://tsurugeek.github.io/redirect_test_page/login.html" id="browser2" target="_blank">外部ブラウザ</a><br><br>
   </form>
 </body>
 </html>
